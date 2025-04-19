@@ -1,0 +1,77 @@
+/* Estilos Generales Compartidos */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0c4c8a;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 30px;
+    padding: 15px 0;
+}
+
+.header h1 {
+    color: #ffcc00;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0;
+}
+
+.header h2 {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0 0 0;
+}
+
+.action-button {
+    background-color: #ffcc00;
+    color: #003366;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #ffd633;
+    transform: scale(1.05);
+}
+
+.action-button.wrong-button {
+    background-color: #ff3333;
+    color: white;
+}
+
+.projection-button {
+    background-color: #00cc66;
+    color: white;
+}
+
+/* Animaciones compartidas */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes flash {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}

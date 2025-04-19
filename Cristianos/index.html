@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Cristianos Dijeron - Selector de Modo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .mode-selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            gap: 30px;
+        }
+        
+        .mode-card {
+            background-color: #003366;
+            border: 3px solid #ffcc00;
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .mode-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ffcc00;
+        }
+        
+        .mode-card h2 {
+            color: #ffcc00;
+            margin-top: 0;
+        }
+        
+        .mode-card p {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .mode-card .icon {
+            font-size: 48px;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>100 CRISTIANOS DIJERON</h1>
+        </div>
+        
+        <div class="mode-selection">
+            <div class="mode-card" onclick="window.location.href='presenter.html'">
+                <div class="icon">👨‍💼</div>
+                <h2>Modo Presentador</h2>
+                <p>Controla el juego, revela respuestas y gestiona los puntajes.</p>
+                <button class="action-button">Entrar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="common.js"></script>
+</body>
+</html>

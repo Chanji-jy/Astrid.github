@@ -1,0 +1,183 @@
+/* Estilos específicos para la ventana de proyección */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.projection-window {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #0c4c8a;
+}
+
+.projection-header {
+    padding: 15px 0;
+}
+
+.projection-header h1 {
+    color: #ffcc00;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0;
+}
+
+.projection-question {
+    background-color: #003366;
+    padding: 20px;
+    margin: 0 20px 20px;
+    border-radius: 10px;
+    font-size: 32px;
+    border: 3px solid #ffcc00;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.projection-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    /* Altura calculada: 100vh menos el espacio para header, pregunta, y equipos */
+    height: calc(100vh - 200px - 10px);
+}
+
+.projection-strikes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.projection-strike {
+    font-size: 60px;
+    color: #ff3333;
+    opacity: 0.3;
+    text-shadow: 2px 2px 4px #000;
+    transition: opacity 0.3s ease;
+}
+
+.projection-strike.active {
+    opacity: 1;
+    animation: flash 0.5s infinite;
+}
+
+.projection-answers {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 20px;
+    margin-bottom: 20px;
+    /* Permitir scroll solo en la sección de respuestas */
+    overflow-y: auto;
+    /* Asegurarse de que el contenedor de respuestas ocupe el espacio disponible */
+    flex-grow: 1;
+    /* Agregar padding inferior para evitar que la última respuesta quede cortada */
+    padding-bottom: 20px;
+}
+
+.projection-answer {
+    background-color: #0055a4;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    border: 2px solid #ffcc00;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.projection-answer.hidden {
+    background-color: #003366;
+    color: transparent;
+}
+
+.projection-answer-number {
+    width: 40px;
+    height: 40px;
+    background-color: #ffcc00;
+    color: #003366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+.projection-answer-text {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.projection-answer-points {
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 22px;
+    min-width: 40px;
+}
+
+.projection-teams {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    /* Altura fija para los equipos */
+    height: 135px;
+    /* No sticky - posición normal */
+    position: relative;
+    z-index: 1;
+}
+
+.projection-team {
+    background-color: #003366;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    padding: 15px;
+    width: 45%;
+    transition: all 0.3s ease;
+}
+
+.projection-team.active {
+    border: 3px solid #ffcc00;
+    box-shadow: 0 0 20px #ffcc00;
+}
+
+.projection-team h3 {
+    margin-top: 0;
+    color: #ffcc00;
+    font-size: 28px;
+}
+
+.projection-score {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.wrong-answer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 300px;
+    color: #ff3333;
+    text-shadow: 8px 8px 16px #000;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.wrong-answer.show {
+    display: block;
+    opacity: 1;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Cristianos Dijeron - Proyección</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projection.css">
+</head>
+<body>
+    <div class="projection-window">
+        <div class="projection-header">
+            <h1>100 CRISTIANOS DIJERON</h1>
+        </div>
+        
+        <div class="projection-question" id="question-display">
+            Esperando pregunta...
+        </div>
+        
+        <div class="projection-content">
+            <div class="projection-strikes">
+                <div class="projection-strike" id="proj-strike1">✗</div>
+                <div class="projection-strike" id="proj-strike2">✗</div>
+                <div class="projection-strike" id="proj-strike3">✗</div>
+            </div>
+            
+            <div class="projection-answers" id="answers-display">
+                <!-- Las respuestas se cargarán dinámicamente -->
+            </div>
+            
+            <div class="projection-teams">
+                <div class="projection-team" id="proj-team1">
+                    <h3>Equipo 1</h3>
+                    <div class="projection-score" id="proj-team1-score">0</div>
+                </div>
+                <div class="projection-team" id="proj-team2">
+                    <h3>Equipo 2</h3>
+                    <div class="projection-score" id="proj-team2-score">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrong-answer" id="wrong-answer">✗</div>
+    </div>
+    
+    <script src="common.js"></script>
+    <script src="projection.js"></script>
+</body>
+</html>

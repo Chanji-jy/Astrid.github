@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Cristianos Dijeron - Modo Presentador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="presenter.css">
+</head>
+<body>
+    <div class="presenter-container">
+        <div class="header">
+            <h1>100 CRISTIANOS DIJERON</h1>
+            <h2>Modo Presentador</h2>
+        </div>
+        
+        <div class="main-content">
+            <div class="game-controls">
+                <div class="question-controls">
+                    <h3>Seleccionar Pregunta</h3>
+                    <select id="question-select" onchange="selectQuestion()">
+                        <option value="">Seleccionar pregunta...</option>
+                    </select>
+                    
+                    <div class="current-question" id="current-question">
+                        Selecciona una pregunta para empezar
+                    </div>
+                </div>
+                
+                <div class="team-controls">
+                    <div id="team1" class="team-score active">
+                        <h3>Equipo 1</h3>
+                        <div class="score-display" id="team1-score">0</div>
+                    </div>
+                    <div id="team2" class="team-score">
+                        <h3>Equipo 2</h3>
+                        <div class="score-display" id="team2-score">0</div>
+                    </div>
+                </div>
+                
+                <div class="team-toggle">
+                    <button class="action-button" onclick="toggleActiveTeam()">Cambiar Equipo Activo</button>
+                </div>
+                
+                <div class="strikes-display">
+                    <h3>Respuestas Incorrectas</h3>
+                    <div class="strikes-icons">
+                        <span id="strike1" class="strike-icon">✗</span>
+                        <span id="strike2" class="strike-icon">✗</span>
+                        <span id="strike3" class="strike-icon">✗</span>
+                    </div>
+                </div>
+                
+                <div class="game-actions">
+                    <button class="action-button wrong-button" onclick="addStrike()">Respuesta Incorrecta</button>
+                    <button class="action-button" onclick="resetStrikes()">Reiniciar X</button>
+                    <button class="action-button" onclick="resetGame()">Reiniciar Juego</button>
+                    <button class="action-button projection-button" onclick="openProjectionWindow()">Abrir Proyección</button>
+                </div>
+            </div>
+            
+            <div class="answers-panel">
+                <h3>Respuestas</h3>
+                <div class="answer-list" id="answer-list">
+                    <p class="empty-message">Selecciona una pregunta para ver las respuestas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="buzzer">
+        <source src="https://www.soundjay.com/misc/sounds/wrong-answer-sound-effect-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="reveal">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="common.js"></script>
+    <script src="presenter.js"></script>
+</body>
+</html>
